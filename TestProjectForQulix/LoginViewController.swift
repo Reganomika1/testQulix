@@ -55,6 +55,9 @@ class LoginViewController: UIViewController {
         loader.perform(request: userDataRequest) { response in
             do {
                 let json = try response.responseJSON()
+                if let token = self.oauth2.accessToken{
+                    UserDefaults.standard.set(token, forKey: "token") 
+                }
                 self.didGetUserdata(dict: json, loader: loader)
             }
             catch let error {
@@ -62,10 +65,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
-
  
-    //MARK: - Profile
+    //MARK: - AUTH
    
     var userDataRequest: URLRequest {
         var request = URLRequest(url: URL(string: "https://api.github.com/user")!)
@@ -75,21 +76,11 @@ class LoginViewController: UIViewController {
 
     func didGetUserdata(dict: [String: Any], loader: OAuth2DataLoader?) {
         
-
+        print(dict)
+        
         DispatchQueue.main.async {
-        
-        let storyboard = UIStoryboard(name: "Reposes", bundle: Bundle.main)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReposesViewController") as! ReposesViewController
-        
-            if let username = dict["name"] as? String {
-                vc.userName = username
-            }
-            else {
-                vc.userName = "Имя не указано"
-            }
-            if let imgURL = dict["avatar_url"] as? String, let url = URL(string: imgURL) {
-                vc.userPhotoURL = url
-            }
+            let storyboard = UIStoryboard(name: "Reposes", bundle: Bundle.main)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ReposesViewController") as! ReposesViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -12,6 +12,11 @@ import UIKit
 class RepoTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var lastDateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

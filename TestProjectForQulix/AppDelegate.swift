@@ -17,13 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
 
         if "testqulix" == url.scheme {
-            print(window?.rootViewController ?? "хуй")
-            if let nc = window?.rootViewController as? UINavigationController {
-                if let vc = nc.viewControllers[0] as? LoginViewController{
-                    vc.oauth2.handleRedirectURL(url)
-                    return true
-                } else {
-                    return false
+            if let viewController = window?.rootViewController{
+                if let nc = viewController as? UINavigationController {
+                    if let vc = nc.viewControllers[0] as? LoginViewController{
+                        vc.oauth2.handleRedirectURL(url)
+                        return true
+                    }
                 }
             }
         }
@@ -32,7 +31,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let token = UserDefaults.standard.object(forKey: "token") as? String
+        
+        if token == nil || token == "" {
+            let storyboard = UIStoryboard(name: "Login", bundle: Bundle.main)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginNavigation")
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        } else {
+            let storyboard = UIStoryboard(name: "Reposes", bundle: Bundle.main)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ReposNavigation")
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

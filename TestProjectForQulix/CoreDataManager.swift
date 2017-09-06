@@ -30,7 +30,7 @@ class CoreDataManager {
     }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: "swiftTest", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "Model", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     

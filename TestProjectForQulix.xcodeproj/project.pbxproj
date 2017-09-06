@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		44C302D23BC32C0F7C54C233 /* Pods_TestProjectForQulix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86267EA78E20485CA009EB96 /* Pods_TestProjectForQulix.framework */; };
+		FA046D971F60849E00337639 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA046D961F60849E00337639 /* RepoTableViewCell.swift */; };
+		FA046D9A1F608E6F00337639 /* CommitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA046D991F608E6F00337639 /* CommitsViewController.swift */; };
+		FA046D9C1F608E7C00337639 /* Commits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA046D9B1F608E7C00337639 /* Commits.storyboard */; };
+		FA046D9F1F608FF300337639 /* CommitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA046D9E1F608FF300337639 /* CommitTableViewCell.swift */; };
 		FAE20D8E1F603A2F00F724F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20D8D1F603A2F00F724F2 /* AppDelegate.swift */; };
-		FAE20D901F603A2F00F724F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20D8F1F603A2F00F724F2 /* ViewController.swift */; };
-		FAE20D931F603A2F00F724F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20D911F603A2F00F724F2 /* Main.storyboard */; };
 		FAE20D951F603A2F00F724F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE20D941F603A2F00F724F2 /* Assets.xcassets */; };
 		FAE20D981F603A2F00F724F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20D961F603A2F00F724F2 /* LaunchScreen.storyboard */; };
 		FAE20DA31F603F1A00F724F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DA21F603F1A00F724F2 /* LoginViewController.swift */; };
@@ -19,16 +21,20 @@
 		FAE20DAC1F6041D100F724F2 /* Reposes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20DAB1F6041D100F724F2 /* Reposes.storyboard */; };
 		FAE20DAE1F605BA200F724F2 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DAD1F605BA200F724F2 /* ServerManager.swift */; };
 		FAE20DB11F605FE200F724F2 /* OAuth2RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DB01F605FE200F724F2 /* OAuth2RetryHandler.swift */; };
+		FAE20DB41F607BDF00F724F2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DB21F607BDF00F724F2 /* Model.xcdatamodeld */; };
+		FAE20DB61F607E6300F724F2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DB51F607E6300F724F2 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58535323DF87D9EA13F11DBB /* Pods-TestProjectForQulix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectForQulix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix.debug.xcconfig"; sourceTree = "<group>"; };
 		839D11F1B22F623509A65A66 /* Pods-TestProjectForQulix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectForQulix.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix.release.xcconfig"; sourceTree = "<group>"; };
 		86267EA78E20485CA009EB96 /* Pods_TestProjectForQulix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectForQulix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA046D961F60849E00337639 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		FA046D991F608E6F00337639 /* CommitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitsViewController.swift; sourceTree = "<group>"; };
+		FA046D9B1F608E7C00337639 /* Commits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Commits.storyboard; sourceTree = "<group>"; };
+		FA046D9E1F608FF300337639 /* CommitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitTableViewCell.swift; sourceTree = "<group>"; };
 		FAE20D8A1F603A2F00F724F2 /* TestProjectForQulix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProjectForQulix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE20D8D1F603A2F00F724F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAE20D8F1F603A2F00F724F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAE20D921F603A2F00F724F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAE20D941F603A2F00F724F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE20D971F603A2F00F724F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAE20D991F603A2F00F724F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +44,8 @@
 		FAE20DAB1F6041D100F724F2 /* Reposes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reposes.storyboard; sourceTree = "<group>"; };
 		FAE20DAD1F605BA200F724F2 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		FAE20DB01F605FE200F724F2 /* OAuth2RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2RetryHandler.swift; sourceTree = "<group>"; };
+		FAE20DB31F607BDF00F724F2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FAE20DB51F607E6300F724F2 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA046D981F608E5900337639 /* Commits */ = {
+			isa = PBXGroup;
+			children = (
+				FA046D9D1F608FDD00337639 /* Cells */,
+				FA046D991F608E6F00337639 /* CommitsViewController.swift */,
+				FA046D9B1F608E7C00337639 /* Commits.storyboard */,
+			);
+			name = Commits;
+			sourceTree = "<group>";
+		};
+		FA046D9D1F608FDD00337639 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA046D9E1F608FF300337639 /* CommitTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		FAE20D811F603A2E00F724F2 = {
 			isa = PBXGroup;
 			children = (
@@ -93,11 +119,10 @@
 				FAE20DA01F603EFC00F724F2 /* Managers */,
 				FAE20D9F1F603EED00F724F2 /* ViewControllers */,
 				FAE20D8D1F603A2F00F724F2 /* AppDelegate.swift */,
-				FAE20D8F1F603A2F00F724F2 /* ViewController.swift */,
-				FAE20D911F603A2F00F724F2 /* Main.storyboard */,
 				FAE20D941F603A2F00F724F2 /* Assets.xcassets */,
 				FAE20D961F603A2F00F724F2 /* LaunchScreen.storyboard */,
 				FAE20D991F603A2F00F724F2 /* Info.plist */,
+				FAE20DB21F607BDF00F724F2 /* Model.xcdatamodeld */,
 			);
 			path = TestProjectForQulix;
 			sourceTree = "<group>";
@@ -105,6 +130,7 @@
 		FAE20D9F1F603EED00F724F2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA046D981F608E5900337639 /* Commits */,
 				FAE20DA81F6041A200F724F2 /* Reposes */,
 				FAE20DA11F603F0500F724F2 /* Login */,
 			);
@@ -114,6 +140,7 @@
 		FAE20DA01F603EFC00F724F2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FAE20DB51F607E6300F724F2 /* CoreDataManager.swift */,
 				FAE20DAD1F605BA200F724F2 /* ServerManager.swift */,
 				FAE20DB01F605FE200F724F2 /* OAuth2RetryHandler.swift */,
 			);
@@ -134,8 +161,17 @@
 			children = (
 				FAE20DA91F6041C400F724F2 /* ReposesViewController.swift */,
 				FAE20DAB1F6041D100F724F2 /* Reposes.storyboard */,
+				FAE20DB71F6081EF00F724F2 /* Cells */,
 			);
 			name = Reposes;
+			sourceTree = "<group>";
+		};
+		FAE20DB71F6081EF00F724F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA046D961F60849E00337639 /* RepoTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,11 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA046D9C1F608E7C00337639 /* Commits.storyboard in Resources */,
 				FAE20DA51F603F2500F724F2 /* Login.storyboard in Resources */,
 				FAE20D981F603A2F00F724F2 /* LaunchScreen.storyboard in Resources */,
 				FAE20D951F603A2F00F724F2 /* Assets.xcassets in Resources */,
 				FAE20DAC1F6041D100F724F2 /* Reposes.storyboard in Resources */,
-				FAE20D931F603A2F00F724F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,11 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA046D9F1F608FF300337639 /* CommitTableViewCell.swift in Sources */,
 				FAE20DAE1F605BA200F724F2 /* ServerManager.swift in Sources */,
 				FAE20DA31F603F1A00F724F2 /* LoginViewController.swift in Sources */,
-				FAE20D901F603A2F00F724F2 /* ViewController.swift in Sources */,
+				FAE20DB41F607BDF00F724F2 /* Model.xcdatamodeld in Sources */,
+				FA046D971F60849E00337639 /* RepoTableViewCell.swift in Sources */,
 				FAE20D8E1F603A2F00F724F2 /* AppDelegate.swift in Sources */,
+				FA046D9A1F608E6F00337639 /* CommitsViewController.swift in Sources */,
 				FAE20DB11F605FE200F724F2 /* OAuth2RetryHandler.swift in Sources */,
+				FAE20DB61F607E6300F724F2 /* CoreDataManager.swift in Sources */,
 				FAE20DAA1F6041C400F724F2 /* ReposesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,14 +328,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FAE20D911F603A2F00F724F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAE20D921F603A2F00F724F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAE20D961F603A2F00F724F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -452,6 +484,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAE20DB21F607BDF00F724F2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAE20DB31F607BDF00F724F2 /* Model.xcdatamodel */,
+			);
+			currentVersion = FAE20DB31F607BDF00F724F2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FAE20D821F603A2E00F724F2 /* Project object */;
 }

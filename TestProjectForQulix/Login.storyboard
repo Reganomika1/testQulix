@@ -31,7 +31,7 @@
         <!--Navigation Controller-->
         <scene sceneID="oAn-Ng-1YA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZOB-YW-PTw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZOB-YW-PTw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dLu-cg-fgm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
