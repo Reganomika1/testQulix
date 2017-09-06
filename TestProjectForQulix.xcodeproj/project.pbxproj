@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C302D23BC32C0F7C54C233 /* Pods_TestProjectForQulix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86267EA78E20485CA009EB96 /* Pods_TestProjectForQulix.framework */; };
 		FAE20D8E1F603A2F00F724F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20D8D1F603A2F00F724F2 /* AppDelegate.swift */; };
 		FAE20D901F603A2F00F724F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20D8F1F603A2F00F724F2 /* ViewController.swift */; };
 		FAE20D931F603A2F00F724F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20D911F603A2F00F724F2 /* Main.storyboard */; };
 		FAE20D951F603A2F00F724F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE20D941F603A2F00F724F2 /* Assets.xcassets */; };
 		FAE20D981F603A2F00F724F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20D961F603A2F00F724F2 /* LaunchScreen.storyboard */; };
+		FAE20DA31F603F1A00F724F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DA21F603F1A00F724F2 /* LoginViewController.swift */; };
+		FAE20DA51F603F2500F724F2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20DA41F603F2500F724F2 /* Login.storyboard */; };
+		FAE20DAA1F6041C400F724F2 /* ReposesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DA91F6041C400F724F2 /* ReposesViewController.swift */; };
+		FAE20DAC1F6041D100F724F2 /* Reposes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE20DAB1F6041D100F724F2 /* Reposes.storyboard */; };
+		FAE20DAE1F605BA200F724F2 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DAD1F605BA200F724F2 /* ServerManager.swift */; };
+		FAE20DB11F605FE200F724F2 /* OAuth2RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE20DB01F605FE200F724F2 /* OAuth2RetryHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58535323DF87D9EA13F11DBB /* Pods-TestProjectForQulix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectForQulix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix.debug.xcconfig"; sourceTree = "<group>"; };
+		839D11F1B22F623509A65A66 /* Pods-TestProjectForQulix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectForQulix.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix.release.xcconfig"; sourceTree = "<group>"; };
+		86267EA78E20485CA009EB96 /* Pods_TestProjectForQulix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectForQulix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE20D8A1F603A2F00F724F2 /* TestProjectForQulix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProjectForQulix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE20D8D1F603A2F00F724F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE20D8F1F603A2F00F724F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,12 @@
 		FAE20D941F603A2F00F724F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAE20D971F603A2F00F724F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAE20D991F603A2F00F724F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE20DA21F603F1A00F724F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAE20DA41F603F2500F724F2 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FAE20DA91F6041C400F724F2 /* ReposesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposesViewController.swift; sourceTree = "<group>"; };
+		FAE20DAB1F6041D100F724F2 /* Reposes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reposes.storyboard; sourceTree = "<group>"; };
+		FAE20DAD1F605BA200F724F2 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		FAE20DB01F605FE200F724F2 /* OAuth2RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2RetryHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C302D23BC32C0F7C54C233 /* Pods_TestProjectForQulix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A152F5159D3716062746F4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58535323DF87D9EA13F11DBB /* Pods-TestProjectForQulix.debug.xcconfig */,
+				839D11F1B22F623509A65A66 /* Pods-TestProjectForQulix.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE027A621862EB8C2D5C5150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86267EA78E20485CA009EB96 /* Pods_TestProjectForQulix.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAE20D811F603A2E00F724F2 = {
 			isa = PBXGroup;
 			children = (
 				FAE20D8C1F603A2F00F724F2 /* TestProjectForQulix */,
 				FAE20D8B1F603A2F00F724F2 /* Products */,
+				7A152F5159D3716062746F4D /* Pods */,
+				EE027A621862EB8C2D5C5150 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +90,8 @@
 		FAE20D8C1F603A2F00F724F2 /* TestProjectForQulix */ = {
 			isa = PBXGroup;
 			children = (
+				FAE20DA01F603EFC00F724F2 /* Managers */,
+				FAE20D9F1F603EED00F724F2 /* ViewControllers */,
 				FAE20D8D1F603A2F00F724F2 /* AppDelegate.swift */,
 				FAE20D8F1F603A2F00F724F2 /* ViewController.swift */,
 				FAE20D911F603A2F00F724F2 /* Main.storyboard */,
@@ -64,6 +102,42 @@
 			path = TestProjectForQulix;
 			sourceTree = "<group>";
 		};
+		FAE20D9F1F603EED00F724F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAE20DA81F6041A200F724F2 /* Reposes */,
+				FAE20DA11F603F0500F724F2 /* Login */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FAE20DA01F603EFC00F724F2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FAE20DAD1F605BA200F724F2 /* ServerManager.swift */,
+				FAE20DB01F605FE200F724F2 /* OAuth2RetryHandler.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		FAE20DA11F603F0500F724F2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FAE20DA21F603F1A00F724F2 /* LoginViewController.swift */,
+				FAE20DA41F603F2500F724F2 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		FAE20DA81F6041A200F724F2 /* Reposes */ = {
+			isa = PBXGroup;
+			children = (
+				FAE20DA91F6041C400F724F2 /* ReposesViewController.swift */,
+				FAE20DAB1F6041D100F724F2 /* Reposes.storyboard */,
+			);
+			name = Reposes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE20D9C1F603A2F00F724F2 /* Build configuration list for PBXNativeTarget "TestProjectForQulix" */;
 			buildPhases = (
+				B018F86097CF274AED287E43 /* [CP] Check Pods Manifest.lock */,
 				FAE20D861F603A2F00F724F2 /* Sources */,
 				FAE20D871F603A2F00F724F2 /* Frameworks */,
 				FAE20D881F603A2F00F724F2 /* Resources */,
+				DE144CB51491CB93CE0D7594 /* [CP] Embed Pods Frameworks */,
+				75EFA02FD9DC724258C4257D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +173,7 @@
 				TargetAttributes = {
 					FAE20D891F603A2F00F724F2 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XMV3P6H2HC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,21 +201,87 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE20DA51F603F2500F724F2 /* Login.storyboard in Resources */,
 				FAE20D981F603A2F00F724F2 /* LaunchScreen.storyboard in Resources */,
 				FAE20D951F603A2F00F724F2 /* Assets.xcassets in Resources */,
+				FAE20DAC1F6041D100F724F2 /* Reposes.storyboard in Resources */,
 				FAE20D931F603A2F00F724F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		75EFA02FD9DC724258C4257D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B018F86097CF274AED287E43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestProjectForQulix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE144CB51491CB93CE0D7594 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/p2.OAuth2/p2_OAuth2.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/p2_OAuth2.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestProjectForQulix/Pods-TestProjectForQulix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAE20D861F603A2F00F724F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE20DAE1F605BA200F724F2 /* ServerManager.swift in Sources */,
+				FAE20DA31F603F1A00F724F2 /* LoginViewController.swift in Sources */,
 				FAE20D901F603A2F00F724F2 /* ViewController.swift in Sources */,
 				FAE20D8E1F603A2F00F724F2 /* AppDelegate.swift in Sources */,
+				FAE20DB11F605FE200F724F2 /* OAuth2RetryHandler.swift in Sources */,
+				FAE20DAA1F6041C400F724F2 /* ReposesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +404,10 @@
 		};
 		FAE20D9D1F603A2F00F724F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58535323DF87D9EA13F11DBB /* Pods-TestProjectForQulix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XMV3P6H2HC;
 				INFOPLIST_FILE = TestProjectForQulix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZS.TestProjectForQulix;
@@ -272,8 +418,10 @@
 		};
 		FAE20D9E1F603A2F00F724F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 839D11F1B22F623509A65A66 /* Pods-TestProjectForQulix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XMV3P6H2HC;
 				INFOPLIST_FILE = TestProjectForQulix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZS.TestProjectForQulix;
@@ -301,6 +449,7 @@
 				FAE20D9E1F603A2F00F724F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

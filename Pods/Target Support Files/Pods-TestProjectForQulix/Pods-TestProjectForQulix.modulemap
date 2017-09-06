@@ -1,0 +1,6 @@
+framework module Pods_TestProjectForQulix {
+  umbrella header "Pods-TestProjectForQulix-umbrella.h"
+
+  export *
+  module * { export * }
+}

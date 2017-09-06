@@ -13,7 +13,7 @@ import SwiftyJSON
 class ServerManager {
 
     static let shared = ServerManager()
-    let baseUrl = "https://apidev.pressfeed.ru"
+    let baseUrl = "https://github.com/"
     typealias Completion = (Bool, JSON?, String?) -> ()
     
     var localPath: String?
@@ -223,74 +223,18 @@ class ServerManager {
     }
     
     
-    //MARK: - Profile
-    
-    func postAvatar( photo: UIImage, completion: @escaping Completion) {
-        
-        guard let token = UserDefaults.standard.object(forKey: "token") as? String else {return}
-        
-        let fixOrientationImage=photo.fixOrientation()
-        
-        
-        let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
-        
-        let imageName = "temp"
-        let imagePath = documentDirectory.appendingPathComponent(imageName)
-        do {
-            if let data = UIImageJPEGRepresentation(fixOrientationImage, 0.4) {
-                try data.write(to: URL(fileURLWithPath: imagePath), options: .atomic)
-            }
-        } catch {
-            print(error)
-        }
-        
-        localPath = imagePath
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(token)",
-            "Current-Version": "v1",
-            "Content-Type": "application/json"
-        ]
-        
-        Alamofire.upload( multipartFormData: { (multipartFormData) in
-            let filePath = URL(fileURLWithPath: self.localPath!)
-            let data = "Alamofire".data(using: String.Encoding.utf8, allowLossyConversion: false)!
-            multipartFormData.append(data, withName: "test")
-            multipartFormData.append(filePath, withName: "file", fileName: "file.jpg", mimeType: "image/jpeg")
-        }, to:baseUrl + "/files/avatar", headers: headers)
-        { (result) in
-            
-            switch result {
-                
-            case .success(let upload, _, _):
-                
-                upload.responseJSON { response in
-                    
-                    let data = response.data
-                    if let data = data {
-                        let json = JSON(data: data)
-                        completion(true, json, nil)
-                    }
-                }
-                
-            case .failure(let encodingError):
-                completion(false, nil, encodingError as? String)
-            }
-            
-        }
-    }
+
 
     
-    func getOwner(completion: @escaping Completion) {
+    func getProfile(token: String, completion: @escaping Completion) {
         
-        guard let token = UserDefaults.standard.object(forKey: "token") as? String else {return}
+        let headers: HTTPHeaders = ["Current-Version": "v1" , "Authorization": "token " + token]
         
-        let headers: HTTPHeaders = ["Current-Version": "v1" , "Authorization": "Bearer " + token]
-        
-        Alamofire.request(baseUrl + "/users/owner", method:.get, parameters: nil, encoding:URLEncoding.default, headers: headers).response {
+        Alamofire.request(baseUrl + "user", method:.get, parameters: nil, encoding:URLEncoding.default, headers: headers).response {
             response in
             let status = response.response?.statusCode
             let data = response.data
+            print(data ?? "hemanihya")
             if let status = status {
                 if status == 200 {
                     if let data = data {

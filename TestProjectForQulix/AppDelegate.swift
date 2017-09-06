@@ -12,6 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+
+        if "testqulix" == url.scheme {
+            print(window?.rootViewController ?? "хуй")
+            if let nc = window?.rootViewController as? UINavigationController {
+                if let vc = nc.viewControllers[0] as? LoginViewController{
+                    vc.oauth2.handleRedirectURL(url)
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        return false
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
