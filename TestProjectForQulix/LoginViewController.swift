@@ -19,13 +19,13 @@ class LoginViewController: UIViewController {
     var loader: OAuth2DataLoader?
     
     var oauth2 = OAuth2CodeGrant(settings: [
-        "client_id": "d69afae5f476502ed0d5",                         // yes, this client-id and secret will work!
+        "client_id": "d69afae5f476502ed0d5",                         
         "client_secret": "0fdb68aab1f992b951ae55fc1c16fa2afb2e2730",
         "authorize_uri": "https://github.com/login/oauth/authorize",
         "token_uri": "https://github.com/login/oauth/access_token",
         "scope": "user repo:status",
-        "redirect_uris": ["testqulix://oauth-callback/github"],            // app has registered this scheme
-        "secret_in_body": true,                                      // GitHub does not accept client secret in the Authorization header
+        "redirect_uris": ["testqulix://oauth-callback/github"],
+        "secret_in_body": true,
         "verbose": true,
         ] as OAuth2JSON)
     
@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        oauth2.forgetTokens()
         
         let signBarButtonItem = UIBarButtonItem(title: "Вход", style: UIBarButtonItemStyle.done, target: self, action: #selector(authorization))
         navigationItem.rightBarButtonItem = signBarButtonItem
@@ -76,14 +78,14 @@ class LoginViewController: UIViewController {
 
     func didGetUserdata(dict: [String: Any], loader: OAuth2DataLoader?) {
         
-        print(dict)
-        
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Reposes", bundle: Bundle.main)
             let vc = storyboard.instantiateViewController(withIdentifier: "ReposesViewController") as! ReposesViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    //MARK: - Handlers
 
     func didCancelOrFail(_ error: Error?) {
         DispatchQueue.main.async {

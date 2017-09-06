@@ -35,7 +35,7 @@ class ServerManager {
                 if status == 200 {
                     if let data = data {
                         let json = JSON(data: data)
-                        print("REPOS: \(json)")
+                        print("REPOSES: \(json)")
                         completion(true, json, nil)
                     } else {
                         completion(true, nil, nil)
@@ -51,6 +51,8 @@ class ServerManager {
                     }
                     completion(false, nil, nil)
                 }
+            }else {
+                completion(false, nil, "Превышено время ожидания отклика сервера. Возможно утрачено интернет-соединение.")
             }
         }
     }
@@ -74,7 +76,7 @@ class ServerManager {
                 if status == 200 {
                     if let data = data {
                         let json = JSON(data: data)
-                        print("REPOS: \(json)")
+                        print("COMMITS: \(json)")
                         completion(true, json, nil)
                     } else {
                         completion(true, nil, nil)
@@ -90,6 +92,8 @@ class ServerManager {
                     }
                     completion(false, nil, nil)
                 }
+            } else {
+                completion(false, nil, "Превышено время ожидания отклика сервера. Возможно утрачено интернет-соединение.")
             }
         }
     }

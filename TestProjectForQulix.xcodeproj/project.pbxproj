@@ -80,9 +80,9 @@
 		FA046D981F608E5900337639 /* Commits */ = {
 			isa = PBXGroup;
 			children = (
-				FA046D9D1F608FDD00337639 /* Cells */,
 				FA046D991F608E6F00337639 /* CommitsViewController.swift */,
 				FA046D9B1F608E7C00337639 /* Commits.storyboard */,
+				FA046D9D1F608FDD00337639 /* Cells */,
 			);
 			name = Commits;
 			sourceTree = "<group>";

@@ -19,6 +19,8 @@ class ReposesViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     var fetchedControl: NSFetchedResultsController<NSFetchRequestResult>!
     
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +42,17 @@ class ReposesViewController: UIViewController, NSFetchedResultsControllerDelegat
             print("Unable to Perform Fetch Request")
             print("\(fetchError), \(fetchError.localizedDescription)")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        updatePage()
+    }
+    
+    //MARK: - UpdatePage
+    
+    func updatePage(){
         ServerManager.shared.getRepos { (success, response, error) in
             if success == true{
                 if let response = response{
@@ -59,6 +71,7 @@ class ReposesViewController: UIViewController, NSFetchedResultsControllerDelegat
                         let item = Repo(entity: self.entityDescript, insertInto: CoreDataManager.shared.managedObjectContext)
                         item.repoId = element["id"].int64Value
                         item.name = element["name"].stringValue
+                        
                         item.lastUpdate = element["updated_at"].stringValue
                         item.author = element["owner"]["login"].stringValue
                         item.commit = nil
@@ -66,6 +79,13 @@ class ReposesViewController: UIViewController, NSFetchedResultsControllerDelegat
                         item.authorId = element["owner"]["login"].int64Value
                         CoreDataManager.shared.saveContext()
                     }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
@@ -77,6 +97,8 @@ class ReposesViewController: UIViewController, NSFetchedResultsControllerDelegat
         tableView.reloadData()
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension ReposesViewController: UITableViewDataSource {
     
@@ -98,7 +120,17 @@ extension ReposesViewController: UITableViewDataSource {
         cell.nameLabel.text = fetchedItem.name
         cell.authorLabel.text = fetchedItem.author
         cell.descriptionLabel.text = fetchedItem.repoDescription
-        cell.lastDateLabel.text = fetchedItem.lastUpdate
+        
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: fetchedItem.lastUpdate!)!
+        dateFormatter.dateFormat = "dd MM yyyy HH:mm:ss"
+        dateFormatter.locale = tempLocale
+        let dateString = dateFormatter.string(from: date)
+        
+        cell.lastDateLabel.text = dateString
     
         return cell
     }
@@ -116,9 +148,9 @@ extension ReposesViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let storyboard = UIStoryboard(name: "Commits", bundle: nil)
-        let photoViewer = storyboard.instantiateViewController(withIdentifier: "CommitsViewController")  as! CommitsViewController
-        photoViewer.fetchedRepo = fetchedControl.object(at: indexPath) as! Repo
-        self.navigationController?.pushViewController(photoViewer, animated: true)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CommitsViewController")  as! CommitsViewController
+        vc.fetchedRepo = fetchedControl.object(at: indexPath) as! Repo
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

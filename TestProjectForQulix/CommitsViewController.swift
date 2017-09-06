@@ -24,6 +24,8 @@ class CommitsViewController: UIViewController, NSFetchedResultsControllerDelegat
     var userName: String!
     
     var fetchedRepo: Repo!
+    
+    //MARK: - LifeCycle
 
     
     override func viewDidLoad() {
@@ -47,7 +49,17 @@ class CommitsViewController: UIViewController, NSFetchedResultsControllerDelegat
             print("Unable to Perform Fetch Request")
             print("\(fetchError), \(fetchError.localizedDescription)")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        updatePage()
+    }
+    
+    //MARK: - UpdatePage
+    
+    func updatePage(){
         ServerManager.shared.getCommits(repo: fetchedRepo.name!, repoOwner: fetchedRepo.author!) { (success, response, error) in
             if success == true{
                 if let response = response{
@@ -64,6 +76,7 @@ class CommitsViewController: UIViewController, NSFetchedResultsControllerDelegat
                         }
                         
                         let item = Commit(entity: self.entityDescript, insertInto: CoreDataManager.shared.managedObjectContext)
+                        
                         item.date = element["commit"]["author"]["date"].stringValue
                         item.message = element["commit"]["message"].stringValue
                         item.author = element["commit"]["author"]["name"].stringValue
@@ -72,14 +85,15 @@ class CommitsViewController: UIViewController, NSFetchedResultsControllerDelegat
                         CoreDataManager.shared.saveContext()
                     }
                 }
+            } else {
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        
     }
     
     //MARK : - NSFetchedResultsControllerDelegate
@@ -88,6 +102,8 @@ class CommitsViewController: UIViewController, NSFetchedResultsControllerDelegat
         tableView.reloadData()
     }
 }
+
+//MARK: - UITableViewDataSource
 
 extension CommitsViewController: UITableViewDataSource {
     
@@ -104,7 +120,17 @@ extension CommitsViewController: UITableViewDataSource {
         cell.nameLabel.text = fetchedItem.message
         cell.authorLabel.text = fetchedItem.author
         cell.hashLabel.text = fetchedItem.commitHash
-        cell.dateLabel.text = fetchedItem.date
+        
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: fetchedItem.date!)!
+        dateFormatter.dateFormat = "dd MM yyyy HH:mm:ss"
+        dateFormatter.locale = tempLocale
+        let dateString = dateFormatter.string(from: date)
+        
+        cell.dateLabel.text = dateString
         
         return cell
     }
